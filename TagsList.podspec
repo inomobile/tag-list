@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         =	'https://github.com/inomobile/tag-list'
-  s.screenshots      =	'https://github.com/inomobile/tag-list/blob/master/Screenshots/CustomTags.png', 											'https://github.com/inomobile/tag-list/blob/master/Screenshots/RegularTagsWithButton.png', 											'https://github.com/inomobile/tag-list/blob/master/Screenshots/RegularTags.png'
+  s.screenshots      =	'https://github.com/inomobile/tag-list/blob/master/Screenshots/CustomTags.png?raw=true', 											'https://github.com/inomobile/tag-list/blob/master/Screenshots/RegularTagsWithButton.png?raw=true', 											'https://github.com/inomobile/tag-list/blob/master/Screenshots/RegularTags.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Anton Tekutov' => 'a.tekutov@inostudio.com' }
   s.source           = { :git => 'https://github.com/Anton/TagsList.git', :tag => s.version.to_s }

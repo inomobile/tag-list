@@ -29,7 +29,7 @@ class ArrayTagsListViewController: TagsListTestViewController {
         dataSource = DefaultTagsListDataSource(tagsListView)
         dataSource.setTags(randomStrings)
 
-        tagsListView.TagsListDelegate = self
+        tagsListView.tagsListDelegate = self
     }
 
     override func putNewStringTag(tag: String) {

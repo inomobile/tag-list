@@ -1,0 +1,16 @@
+PODS:
+  - TagsList (0.1.0)
+
+DEPENDENCIES:
+  - TagsList (from `../`)
+
+EXTERNAL SOURCES:
+  TagsList:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TagsList: 48fd15af1bf5975a35b4b5784745505df8604ccb
+
+PODFILE CHECKSUM: 1608e6d79048263f126182257731ac22a4ad546e
+
+COCOAPODS: 1.8.3

@@ -10,15 +10,15 @@ import Foundation
 
 public class DefaultTagsListDataSource {
     
-    private let TagsList: TagsListProtocol
+    private let tagsList: TagsListProtocol
     private var items = [TagViewItem]()
     var tagsCount: Int {
         return items.count
     }
     
     public init(_ TagsList: TagsListProtocol) {
-        self.TagsList = TagsList
-        TagsList.TagsListDataSource = self
+        self.tagsList = TagsList
+        TagsList.tagsListDataSource = self
     }
     
     // MARK: - Array actions encapsulation
@@ -33,31 +33,31 @@ public class DefaultTagsListDataSource {
     
     public func appendTag(_ newElement: TagViewItem) {
         items.append(newElement)
-        TagsList.insertCellByIndex(items.count - 1)
+        tagsList.insertCellByIndex(items.count - 1)
     }
     
     public func insertTag(_ newElement: TagViewItem, at: Int) {
         if at >= 0 && at <= items.count {
             items.insert(newElement, at: at)
-            TagsList.insertCellByIndex(at)
+            tagsList.insertCellByIndex(at)
         }
     }	
     
     public func setTags(_ itemsArray: [TagViewItem]) {
         items = itemsArray
-        TagsList.reloadCollectionData()
+        tagsList.reloadCollectionData()
     }
     
     public func removeTag(at: Int) {
         if at >= 0 && at < items.count {
             items.remove(at: at)
-            TagsList.removeCellByIndex(at)
+            tagsList.removeCellByIndex(at)
         }
     }
     
     public func removeAllTags() {
         items.removeAll()
-        TagsList.reloadCollectionData()
+        tagsList.reloadCollectionData()
     }
 }
 
@@ -72,7 +72,7 @@ extension DefaultTagsListDataSource {
     public func setTags(_ itemsArray: [String]) {
         items.removeAll()
         items = itemsArray.compactMap({ TagViewItem($0) })
-        TagsList.reloadCollectionData()
+        tagsList.reloadCollectionData()
     }
     
     public func insertTag(_ newElement: String, at: Int) {

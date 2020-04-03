@@ -11,8 +11,8 @@ import UIKit
 public enum ContentOrientation { case horizontal, verticalScrollable, verticalSizeToFit }
 
 public protocol TagsListProtocol: UIView {    
-    var TagsListDataSource: TagsListDataSource? { get set }
-    var TagsListDelegate: TagsListDelegate? { get set }
+    var tagsListDataSource: TagsListDataSource? { get set }
+    var tagsListDelegate: TagsListDelegate? { get set }
     var itemsConfiguration: TagsListItemConfiguratorProtocol { get set }
     
     var minimumInteritemSpacing: CGFloat { get set }

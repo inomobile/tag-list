@@ -6,7 +6,6 @@
 //  Copyright © 2020 Антон Текутов. All rights reserved.
 //
 
-import UIKit
 import TagsList
 
 class DataSourceTagsListViewController: TagsListTestViewController {
@@ -37,8 +36,8 @@ class DataSourceTagsListViewController: TagsListTestViewController {
         }
         items.insert(createCustomMinecraftItem(), at: items.count / 2)
         
-        tagsListView.TagsListDataSource = self
-        tagsListView.TagsListDelegate = self
+        tagsListView.tagsListDataSource = self
+        tagsListView.tagsListDelegate = self
     }
     
     private func createCustomMinecraftItem() -> TagViewItem {

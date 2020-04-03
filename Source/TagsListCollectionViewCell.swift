@@ -12,9 +12,9 @@ public class TagsListCollectionViewCell: UICollectionViewCell, TagCollectionView
     
     static let identifier: String = "TagItemCell"
     
-    private weak var TagsList: TagCollectionViewCellDelegate!
+    private weak var tagsList: TagCollectionViewCellDelegate!
     private var config: TagsListItemConfiguratorProtocol {
-        guard let configuration = TagsList?.itemsConfiguration
+        guard let configuration = tagsList?.itemsConfiguration
             else { return TagViewItemConfigurator() }
         return configuration
     }
@@ -80,8 +80,8 @@ public class TagsListCollectionViewCell: UICollectionViewCell, TagCollectionView
     
     // MARK: - Setup content
     
-    public func setup(cellDelegate: TagCollectionViewCellDelegate, tagViewItem: TagViewItem) {
-        TagsList = cellDelegate
+    internal func setup(cellDelegate: TagCollectionViewCellDelegate, tagViewItem: TagViewItem) {
+        tagsList = cellDelegate
         
         backgroundColor = tagViewItem.backgroundColor ?? config.backgroundColor
         layer.cornerRadius = config.itemCornerRadius
@@ -140,6 +140,6 @@ public class TagsListCollectionViewCell: UICollectionViewCell, TagCollectionView
     // MARK: - xButtonTapped action
     
     @objc private func buttonTouched() {
-        TagsList?.xButtonPressed(self)
+        tagsList?.xButtonPressed(self)
     }
 }

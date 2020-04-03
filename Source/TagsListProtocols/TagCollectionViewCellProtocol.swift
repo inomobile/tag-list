@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol TagCollectionViewCellDelegate: class {
+internal protocol TagCollectionViewCellDelegate: class {
     var itemsConfiguration: TagsListItemConfiguratorProtocol { get set }
     
     func xButtonPressed(_ cell: UICollectionViewCell)
@@ -21,6 +21,6 @@ public protocol TagCollectionViewCellProtocol: UICollectionViewCell {
     var xButton: UIButton { get }
 }
 
-public protocol TagCollectionViewCellConfigurationProtocol {
+internal protocol TagCollectionViewCellConfigurationProtocol {
 	func setup(cellDelegate: TagCollectionViewCellDelegate, tagViewItem: TagViewItem)
 }

@@ -1,0 +1,6 @@
+framework module TagsList {
+  umbrella header "TagsList-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -15,8 +15,8 @@ public class TagsList: UIView, TagsListProtocol {
     // MARK: - Public variables
     
     public var itemsConfiguration: TagsListItemConfiguratorProtocol = TagViewItemConfigurator()
-    public weak var TagsListDelegate: TagsListDelegate?
-    public var TagsListDataSource: TagsListDataSource?
+    public weak var tagsListDelegate: TagsListDelegate?
+    public var tagsListDataSource: TagsListDataSource?
     
     var spacing: CGFloat = 5
     public var contentOrientation: ContentOrientation = .verticalScrollable {
@@ -159,13 +159,13 @@ public class TagsList: UIView, TagsListProtocol {
     }
     
     public func insertCellByIndex(_ index: Int) {
-        if TagsListDataSource != nil {
+        if tagsListDataSource != nil {
             insertCell(index)
         }
     }
     
     public func removeCellByIndex(_ index: Int) {
-        if TagsListDataSource != nil {
+        if tagsListDataSource != nil {
             let indexPath = IndexPath(row: index, section: 0)
             tagCollectionView.deleteItems(at: [indexPath])
         }
@@ -200,10 +200,10 @@ public class TagsList: UIView, TagsListProtocol {
 // MARK: - TagCollectionViewCellDelegate
 
 extension TagsList: TagCollectionViewCellDelegate {
-    public func xButtonPressed(_ cell: UICollectionViewCell) {
+    internal func xButtonPressed(_ cell: UICollectionViewCell) {
         if let indexPath = tagCollectionView.indexPath(for: cell) {
-        	TagsListDelegate?.tagsListCellXButtonTouched(self, index: indexPath.row)
-            if let source = TagsListDataSource {
+        	tagsListDelegate?.tagsListCellXButtonTouched(self, index: indexPath.row)
+            if let source = tagsListDataSource {
                 source.removeTagsListItem(indexPath.row)
             }
             tagCollectionView.deleteItems(at: [indexPath])
@@ -215,7 +215,7 @@ extension TagsList: TagCollectionViewCellDelegate {
 
 extension TagsList: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let item = TagsListDataSource!.tagsListViewItem(self, index: indexPath.row)
+        let item = tagsListDataSource!.tagsListViewItem(self, index: indexPath.row)
         return CGSize(width: ceil(calculateTagWidth(item)), height: ceil(itemsConfiguration.cellHeight))
     }
 }
@@ -224,16 +224,16 @@ extension TagsList: UICollectionViewDelegateFlowLayout {
 
 extension TagsList: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return TagsListDataSource?.tagsListItemsCount(self) ?? 0
+        return tagsListDataSource?.tagsListItemsCount(self) ?? 0
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = TagsListDataSource!.tagsListViewItem(self, index: indexPath.row)
+        let item = tagsListDataSource!.tagsListViewItem(self, index: indexPath.row)
 
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: TagsListCollectionViewCell.identifier, for: indexPath) as? TagCollectionViewCellProtocol & TagCollectionViewCellConfigurationProtocol) ?? TagsListCollectionViewCell()
         cell.setup(cellDelegate: self, tagViewItem: item)
         
-        return TagsListDataSource!.tagsListCellFinalConfiguration(self, cell: cell, index: indexPath.row)
+        return tagsListDataSource!.tagsListCellFinalConfiguration(self, cell: cell, index: indexPath.row)
     }
 }
 
@@ -241,6 +241,6 @@ extension TagsList: UICollectionViewDataSource {
 
 extension TagsList: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        TagsListDelegate?.tagsListCellTouched(self, index: indexPath.row)
+        tagsListDelegate?.tagsListCellTouched(self, index: indexPath.row)
     }
 }

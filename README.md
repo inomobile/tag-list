@@ -24,7 +24,7 @@ Example project includes 3 parts:
 
 | **Content orientation** | **Items deleting** | **Customisation features** |
 |:-------:|:-------:|:-------:|
-|![TagsList](DemoGif/TagList 1.gif "TagList")|![TagsList](DemoGif/TagList 2.gif "TagList")|![TagsList](DemoGif/TagList 3.gif "TagList")|
+|<img src="https://github.com/inomobile/tag-list/blob/master/DemoGif/TagList%201.gif?raw=true" width="300">|<img src="https://github.com/inomobile/tag-list/blob/master/DemoGif/TagList%202.gif?raw=true" width="300">| <img src="https://github.com/inomobile/tag-list/blob/master/DemoGif/TagList%203.gif?raw=true" width="300">|
 ## Requirements
 
 - iOS 11.0+

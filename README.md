@@ -20,7 +20,7 @@ Example project includes 3 parts:
 - Sample of using `TagsList` inside of `UITableViewCell` and calculating `TagsList` height
 
 
-## Preview
+## Preview 123
 
 | **Content orientation** | **Items deleting** | **Customisation features** |
 |:-------:|:-------:|:-------:|

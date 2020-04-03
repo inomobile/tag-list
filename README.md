@@ -24,8 +24,7 @@ Example project includes 3 parts:
 
 | **Content orientation** | **Items deleting** | **Customisation features** |
 |:-------:|:-------:|:-------:|
-|<img src="DemoGif/TagList 1.gif" width="300">|<img src="DemoGif/TagList 2.gif" width="300">| <img src="DemoGif/TagList 3.gif" width="300">|
-
+|![TagsList](DemoGif/TagList 1.gif "TagList")|![TagsList](DemoGif/TagList 2.gif "TagList")|![TagsList](DemoGif/TagList 3.gif "TagList")|
 ## Requirements
 
 - iOS 11.0+

@@ -3,7 +3,7 @@
 [![CI Status](https://img.shields.io/travis/Anton/TagsList.svg?style=flat)](https://travis-ci.org/Anton/TagsList)
 [![Version](https://img.shields.io/cocoapods/v/TagsList.svg?style=flat)](https://cocoapods.org/pods/TagsList)
 [![License](https://img.shields.io/cocoapods/l/TagsList.svg?style=flat)](https://cocoapods.org/pods/TagsList)
-[![Platform](https://img.shields.io/cocoapods/p/TagsList.svg?style=flat)](https://cocoapods.org/pods/TagsList)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-green.svg?style=flat)](https://developer.apple.com/swift/) 
 
 
 <p align="center">

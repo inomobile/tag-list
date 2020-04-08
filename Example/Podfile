@@ -6,6 +6,5 @@ target 'TagsList_Example' do
   target 'TagsList_Tests' do
     inherit! :search_paths
 
-    
   end
 end

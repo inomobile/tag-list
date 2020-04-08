@@ -24,15 +24,17 @@ Pod::Spec.new do |s|
   s.homepage         =	'https://github.com/inomobile/tag-list'
   s.screenshots      =	'https://github.com/inomobile/tag-list/blob/master/Screenshots/CustomTags.png?raw=true', 											'https://github.com/inomobile/tag-list/blob/master/Screenshots/RegularTagsWithButton.png?raw=true', 											'https://github.com/inomobile/tag-list/blob/master/Screenshots/RegularTags.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Anton Tekutov' => 'a.tekutov@inostudio.com' }
-  s.source           = { :git => 'https://github.com/Anton/TagsList.git', :tag => s.version.to_s }
+  s.author           = { 'Inostudio mobile team (Anton Tekutov)' => 'a.tekutov@inostudio.com' }
+  s.source           = { :git => 'https://github.com/inomobile/tag-list.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Source/**/*.swift'
+  s.source_files = 'Source/**/*'
   s.swift_version = '5.0'
   s.platforms = {
     "ios": "11.0"
   }
+  
+  s.frameworks = 'UIKit'
   
 end
